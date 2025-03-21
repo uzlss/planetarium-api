@@ -1,0 +1,628 @@
+[
+  {
+    "model": "user.user",
+    "pk": 1,
+    "fields": {
+      "username": "user1",
+      "password": "pbkdf2_sha256$260000$dummyhash1",
+      "email": "user1@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "date_joined": "2025-03-21T00:00:00Z"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 2,
+    "fields": {
+      "username": "user2",
+      "password": "pbkdf2_sha256$260000$dummyhash2",
+      "email": "user2@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "date_joined": "2025-03-21T00:00:00Z"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 3,
+    "fields": {
+      "username": "user3",
+      "password": "pbkdf2_sha256$260000$dummyhash3",
+      "email": "user3@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "date_joined": "2025-03-21T00:00:00Z"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 4,
+    "fields": {
+      "username": "user4",
+      "password": "pbkdf2_sha256$260000$dummyhash4",
+      "email": "user4@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "date_joined": "2025-03-21T00:00:00Z"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 5,
+    "fields": {
+      "username": "user5",
+      "password": "pbkdf2_sha256$260000$dummyhash5",
+      "email": "user5@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "date_joined": "2025-03-21T00:00:00Z"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 6,
+    "fields": {
+      "username": "user6",
+      "password": "pbkdf2_sha256$260000$dummyhash6",
+      "email": "user6@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "date_joined": "2025-03-21T00:00:00Z"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 7,
+    "fields": {
+      "username": "user7",
+      "password": "pbkdf2_sha256$260000$dummyhash7",
+      "email": "user7@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "date_joined": "2025-03-21T00:00:00Z"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 8,
+    "fields": {
+      "username": "user8",
+      "password": "pbkdf2_sha256$260000$dummyhash8",
+      "email": "user8@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "date_joined": "2025-03-21T00:00:00Z"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 9,
+    "fields": {
+      "username": "user9",
+      "password": "pbkdf2_sha256$260000$dummyhash9",
+      "email": "user9@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "date_joined": "2025-03-21T00:00:00Z"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 10,
+    "fields": {
+      "username": "user10",
+      "password": "pbkdf2_sha256$260000$dummyhash10",
+      "email": "user10@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "date_joined": "2025-03-21T00:00:00Z"
+    }
+  },
+
+  {
+    "model": "planetarium.showtheme",
+    "pk": 1,
+    "fields": { "name": "Theme 1: Cosmos" }
+  },
+  {
+    "model": "planetarium.showtheme",
+    "pk": 2,
+    "fields": { "name": "Theme 2: Nebulae" }
+  },
+  {
+    "model": "planetarium.showtheme",
+    "pk": 3,
+    "fields": { "name": "Theme 3: Galaxies" }
+  },
+  {
+    "model": "planetarium.showtheme",
+    "pk": 4,
+    "fields": { "name": "Theme 4: Black Holes" }
+  },
+  {
+    "model": "planetarium.showtheme",
+    "pk": 5,
+    "fields": { "name": "Theme 5: Stars" }
+  },
+  {
+    "model": "planetarium.showtheme",
+    "pk": 6,
+    "fields": { "name": "Theme 6: Planets" }
+  },
+  {
+    "model": "planetarium.showtheme",
+    "pk": 7,
+    "fields": { "name": "Theme 7: Comets" }
+  },
+  {
+    "model": "planetarium.showtheme",
+    "pk": 8,
+    "fields": { "name": "Theme 8: Asteroids" }
+  },
+  {
+    "model": "planetarium.showtheme",
+    "pk": 9,
+    "fields": { "name": "Theme 9: Meteor Showers" }
+  },
+  {
+    "model": "planetarium.showtheme",
+    "pk": 10,
+    "fields": { "name": "Theme 10: Exoplanets" }
+  },
+
+  {
+    "model": "planetarium.astronomyshow",
+    "pk": 1,
+    "fields": {
+      "title": "Astronomy Show 1",
+      "description": "An engaging show about the mysteries of the cosmos."
+    }
+  },
+  {
+    "model": "planetarium.astronomyshow",
+    "pk": 2,
+    "fields": {
+      "title": "Astronomy Show 2",
+      "description": "Explore the wonders of nebulae and stellar formations."
+    }
+  },
+  {
+    "model": "planetarium.astronomyshow",
+    "pk": 3,
+    "fields": {
+      "title": "Astronomy Show 3",
+      "description": "Learn about galaxies and the evolution of the universe."
+    }
+  },
+  {
+    "model": "planetarium.astronomyshow",
+    "pk": 4,
+    "fields": {
+      "title": "Astronomy Show 4",
+      "description": "A deep dive into black holes and cosmic phenomena."
+    }
+  },
+  {
+    "model": "planetarium.astronomyshow",
+    "pk": 5,
+    "fields": {
+      "title": "Astronomy Show 5",
+      "description": "The life cycle of stars explained in detail."
+    }
+  },
+  {
+    "model": "planetarium.astronomyshow",
+    "pk": 6,
+    "fields": {
+      "title": "Astronomy Show 6",
+      "description": "Discover the secrets of our solar system and planets."
+    }
+  },
+  {
+    "model": "planetarium.astronomyshow",
+    "pk": 7,
+    "fields": {
+      "title": "Astronomy Show 7",
+      "description": "A journey through comets and their spectacular tails."
+    }
+  },
+  {
+    "model": "planetarium.astronomyshow",
+    "pk": 8,
+    "fields": {
+      "title": "Astronomy Show 8",
+      "description": "Understand asteroids and their impact on Earth."
+    }
+  },
+  {
+    "model": "planetarium.astronomyshow",
+    "pk": 9,
+    "fields": {
+      "title": "Astronomy Show 9",
+      "description": "Experience the magic of meteor showers."
+    }
+  },
+  {
+    "model": "planetarium.astronomyshow",
+    "pk": 10,
+    "fields": {
+      "title": "Astronomy Show 10",
+      "description": "Insights into the discovery of distant exoplanets."
+    }
+  },
+
+  {
+    "model": "planetarium.planetariumdome",
+    "pk": 1,
+    "fields": {
+      "name": "Dome 1",
+      "rows": 15,
+      "seats_in_row": 20
+    }
+  },
+  {
+    "model": "planetarium.planetariumdome",
+    "pk": 2,
+    "fields": {
+      "name": "Dome 2",
+      "rows": 15,
+      "seats_in_row": 20
+    }
+  },
+  {
+    "model": "planetarium.planetariumdome",
+    "pk": 3,
+    "fields": {
+      "name": "Dome 3",
+      "rows": 15,
+      "seats_in_row": 20
+    }
+  },
+  {
+    "model": "planetarium.planetariumdome",
+    "pk": 4,
+    "fields": {
+      "name": "Dome 4",
+      "rows": 15,
+      "seats_in_row": 20
+    }
+  },
+  {
+    "model": "planetarium.planetariumdome",
+    "pk": 5,
+    "fields": {
+      "name": "Dome 5",
+      "rows": 15,
+      "seats_in_row": 20
+    }
+  },
+  {
+    "model": "planetarium.planetariumdome",
+    "pk": 6,
+    "fields": {
+      "name": "Dome 6",
+      "rows": 15,
+      "seats_in_row": 20
+    }
+  },
+  {
+    "model": "planetarium.planetariumdome",
+    "pk": 7,
+    "fields": {
+      "name": "Dome 7",
+      "rows": 15,
+      "seats_in_row": 20
+    }
+  },
+  {
+    "model": "planetarium.planetariumdome",
+    "pk": 8,
+    "fields": {
+      "name": "Dome 8",
+      "rows": 15,
+      "seats_in_row": 20
+    }
+  },
+  {
+    "model": "planetarium.planetariumdome",
+    "pk": 9,
+    "fields": {
+      "name": "Dome 9",
+      "rows": 15,
+      "seats_in_row": 20
+    }
+  },
+  {
+    "model": "planetarium.planetariumdome",
+    "pk": 10,
+    "fields": {
+      "name": "Dome 10",
+      "rows": 15,
+      "seats_in_row": 20
+    }
+  },
+
+  {
+    "model": "planetarium.showsession",
+    "pk": 1,
+    "fields": {
+      "astronomy_show": 1,
+      "planetarium_dome": 1,
+      "show_time": "2025-04-01T20:00:00Z"
+    }
+  },
+  {
+    "model": "planetarium.showsession",
+    "pk": 2,
+    "fields": {
+      "astronomy_show": 2,
+      "planetarium_dome": 2,
+      "show_time": "2025-04-02T20:30:00Z"
+    }
+  },
+  {
+    "model": "planetarium.showsession",
+    "pk": 3,
+    "fields": {
+      "astronomy_show": 3,
+      "planetarium_dome": 3,
+      "show_time": "2025-04-03T21:00:00Z"
+    }
+  },
+  {
+    "model": "planetarium.showsession",
+    "pk": 4,
+    "fields": {
+      "astronomy_show": 4,
+      "planetarium_dome": 4,
+      "show_time": "2025-04-04T20:15:00Z"
+    }
+  },
+  {
+    "model": "planetarium.showsession",
+    "pk": 5,
+    "fields": {
+      "astronomy_show": 5,
+      "planetarium_dome": 5,
+      "show_time": "2025-04-05T20:45:00Z"
+    }
+  },
+  {
+    "model": "planetarium.showsession",
+    "pk": 6,
+    "fields": {
+      "astronomy_show": 6,
+      "planetarium_dome": 6,
+      "show_time": "2025-04-06T21:00:00Z"
+    }
+  },
+  {
+    "model": "planetarium.showsession",
+    "pk": 7,
+    "fields": {
+      "astronomy_show": 7,
+      "planetarium_dome": 7,
+      "show_time": "2025-04-07T20:30:00Z"
+    }
+  },
+  {
+    "model": "planetarium.showsession",
+    "pk": 8,
+    "fields": {
+      "astronomy_show": 8,
+      "planetarium_dome": 8,
+      "show_time": "2025-04-08T20:00:00Z"
+    }
+  },
+  {
+    "model": "planetarium.showsession",
+    "pk": 9,
+    "fields": {
+      "astronomy_show": 9,
+      "planetarium_dome": 9,
+      "show_time": "2025-04-09T21:15:00Z"
+    }
+  },
+  {
+    "model": "planetarium.showsession",
+    "pk": 10,
+    "fields": {
+      "astronomy_show": 10,
+      "planetarium_dome": 10,
+      "show_time": "2025-04-10T20:00:00Z"
+    }
+  },
+
+  {
+    "model": "planetarium.reservation",
+    "pk": 1,
+    "fields": {
+      "created_at": "2025-03-21T12:00:00Z",
+      "user": 1
+    }
+  },
+  {
+    "model": "planetarium.reservation",
+    "pk": 2,
+    "fields": {
+      "created_at": "2025-03-21T12:05:00Z",
+      "user": 2
+    }
+  },
+  {
+    "model": "planetarium.reservation",
+    "pk": 3,
+    "fields": {
+      "created_at": "2025-03-21T12:10:00Z",
+      "user": 3
+    }
+  },
+  {
+    "model": "planetarium.reservation",
+    "pk": 4,
+    "fields": {
+      "created_at": "2025-03-21T12:15:00Z",
+      "user": 4
+    }
+  },
+  {
+    "model": "planetarium.reservation",
+    "pk": 5,
+    "fields": {
+      "created_at": "2025-03-21T12:20:00Z",
+      "user": 5
+    }
+  },
+  {
+    "model": "planetarium.reservation",
+    "pk": 6,
+    "fields": {
+      "created_at": "2025-03-21T12:25:00Z",
+      "user": 6
+    }
+  },
+  {
+    "model": "planetarium.reservation",
+    "pk": 7,
+    "fields": {
+      "created_at": "2025-03-21T12:30:00Z",
+      "user": 7
+    }
+  },
+  {
+    "model": "planetarium.reservation",
+    "pk": 8,
+    "fields": {
+      "created_at": "2025-03-21T12:35:00Z",
+      "user": 8
+    }
+  },
+  {
+    "model": "planetarium.reservation",
+    "pk": 9,
+    "fields": {
+      "created_at": "2025-03-21T12:40:00Z",
+      "user": 9
+    }
+  },
+  {
+    "model": "planetarium.reservation",
+    "pk": 10,
+    "fields": {
+      "created_at": "2025-03-21T12:45:00Z",
+      "user": 10
+    }
+  },
+
+  {
+    "model": "planetarium.ticket",
+    "pk": 1,
+    "fields": {
+      "row": 5,
+      "seat": 10,
+      "show_session": 1,
+      "reservation": 1
+    }
+  },
+  {
+    "model": "planetarium.ticket",
+    "pk": 2,
+    "fields": {
+      "row": 5,
+      "seat": 10,
+      "show_session": 2,
+      "reservation": 2
+    }
+  },
+  {
+    "model": "planetarium.ticket",
+    "pk": 3,
+    "fields": {
+      "row": 5,
+      "seat": 10,
+      "show_session": 3,
+      "reservation": 3
+    }
+  },
+  {
+    "model": "planetarium.ticket",
+    "pk": 4,
+    "fields": {
+      "row": 5,
+      "seat": 10,
+      "show_session": 4,
+      "reservation": 4
+    }
+  },
+  {
+    "model": "planetarium.ticket",
+    "pk": 5,
+    "fields": {
+      "row": 5,
+      "seat": 10,
+      "show_session": 5,
+      "reservation": 5
+    }
+  },
+  {
+    "model": "planetarium.ticket",
+    "pk": 6,
+    "fields": {
+      "row": 5,
+      "seat": 10,
+      "show_session": 6,
+      "reservation": 6
+    }
+  },
+  {
+    "model": "planetarium.ticket",
+    "pk": 7,
+    "fields": {
+      "row": 5,
+      "seat": 10,
+      "show_session": 7,
+      "reservation": 7
+    }
+  },
+  {
+    "model": "planetarium.ticket",
+    "pk": 8,
+    "fields": {
+      "row": 5,
+      "seat": 10,
+      "show_session": 8,
+      "reservation": 8
+    }
+  },
+  {
+    "model": "planetarium.ticket",
+    "pk": 9,
+    "fields": {
+      "row": 5,
+      "seat": 10,
+      "show_session": 9,
+      "reservation": 9
+    }
+  },
+  {
+    "model": "planetarium.ticket",
+    "pk": 10,
+    "fields": {
+      "row": 5,
+      "seat": 10,
+      "show_session": 10,
+      "reservation": 10
+    }
+  }
+]
