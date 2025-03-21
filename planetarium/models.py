@@ -65,7 +65,8 @@ class Ticket(models.Model):
     )
     reservation = models.ForeignKey(
         Reservation,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="tickets"
     )
 
     @staticmethod
@@ -81,7 +82,7 @@ class Ticket(models.Model):
                 planetarium_dome_attr_name
         ) in [
             (row, "row", "rows"),
-            (seat, "seat", "seats"),
+            (seat, "seat", "seats_in_row"),
         ]:
             count_attrs = getattr(
                 planetarium_dome,
@@ -121,3 +122,8 @@ class Ticket(models.Model):
 
     def __str__(self):
         return f"{self.show_session} (row: {self.row}, seat: {self.seat})"
+
+
+    class Meta:
+        unique_together = ("show_session", "row", "seat")
+        ordering = ["row", "seat"]
