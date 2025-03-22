@@ -1,7 +1,18 @@
+import os
+import uuid
+
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from django.db import models
+from django.utils.text import slugify
 
+
+def create_custom_path(instance, filename):
+    _, extension = os.path.splitext(filename)
+    return os.path.join(
+        "uploads/images/",
+        f"{slugify(instance.title)}-{uuid.uuid4()}{extension}"
+    )
 
 class ShowTheme(models.Model):
     name = models.CharField(max_length=63)
@@ -13,6 +24,7 @@ class ShowTheme(models.Model):
 class AstronomyShow(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
+    image = models.ImageField(null=True, upload_to=create_custom_path)
 
     def __str__(self):
         return self.title
