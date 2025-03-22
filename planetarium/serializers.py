@@ -84,12 +84,6 @@ class ShowSessionRetrieveSerializer(ShowSessionSerializer):
     planetarium_dome = ShowThemeSerializer(many=False, read_only=True)
 
 
-class ReservationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Reservation
-        fields = "__all__"
-
-
 class TicketSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         data = super(TicketSerializer, self).validate(attrs=attrs)
@@ -109,3 +103,30 @@ class TicketSerializer(serializers.ModelSerializer):
             "seat",
             "show_session",
         )
+
+
+class TicketRetrieveSerializer(TicketSerializer):
+    show_session = ShowSessionRetrieveSerializer(many=False, read_only=True)
+
+
+class ReservationSerializer(serializers.ModelSerializer):
+    tickets = TicketSerializer(many=True, read_only=False, allow_empty=False)
+
+    def create(self, validated_data):
+        tickets_data = validated_data.pop("tickets")
+        reservation = Reservation.objects.create(**validated_data)
+        for ticket_data in tickets_data:
+            Ticket.objects.create(reservation=reservation, **ticket_data)
+        return reservation
+
+    class Meta:
+        model = Reservation
+        fields = (
+            "id",
+            "created_at",
+            "tickets"
+        )
+
+
+class ReservationRetrieveSerializer(ReservationSerializer):
+    tickets = TicketRetrieveSerializer(many=True, read_only=True)
