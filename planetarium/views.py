@@ -1,35 +1,38 @@
-from django.http import HttpResponseForbidden, HttpResponse
-from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, mixins
 from rest_framework.permissions import IsAuthenticated
 
 from planetarium.models import (
-    ShowTheme, AstronomyShow, PlanetariumDome, ShowSession, Reservation, Ticket,
+    ShowTheme, AstronomyShow, PlanetariumDome, ShowSession, Reservation,
 )
+from planetarium.permissions import IsAdminOrIfAuthenticatedReadOnly
 
 from planetarium.serializers import (
     ShowThemeSerializer, AstronomyShowSerializer, PlanetariumDomeSerializer, ShowSessionSerializer,
-    ReservationSerializer, TicketSerializer, ShowSessionListSerializer, ShowSessionRetrieveSerializer,
+    ReservationSerializer, ShowSessionListSerializer, ShowSessionRetrieveSerializer,
     ReservationRetrieveSerializer,
 )
 
 
-class ShowThemeViewSet(viewsets.ModelViewSet):
+class PlanetariumBaseViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAdminOrIfAuthenticatedReadOnly, )
+
+
+class ShowThemeViewSet(PlanetariumBaseViewSet):
     queryset = ShowTheme.objects.all()
     serializer_class = ShowThemeSerializer
 
 
-class AstronomyShowViewSet(viewsets.ModelViewSet):
+class AstronomyShowViewSet(PlanetariumBaseViewSet):
     queryset = AstronomyShow.objects.all()
     serializer_class = AstronomyShowSerializer
 
 
-class PlanetariumDomeViewSet(viewsets.ModelViewSet):
+class PlanetariumDomeViewSet(PlanetariumBaseViewSet):
     queryset = PlanetariumDome.objects.all()
     serializer_class = PlanetariumDomeSerializer
 
 
-class ShowSessionViewSet(viewsets.ModelViewSet):
+class ShowSessionViewSet(PlanetariumBaseViewSet):
     queryset = ShowSession.objects.select_related(
         "astronomy_show",
         "planetarium_dome",
@@ -45,10 +48,20 @@ class ShowSessionViewSet(viewsets.ModelViewSet):
         return self.serializer_class
 
 
-class ReservationViewSet(viewsets.ModelViewSet):
+class ReservationViewSet(
+    mixins.ListModelMixin,
+    mixins.CreateModelMixin,
+    mixins.DestroyModelMixin,
+    mixins.RetrieveModelMixin,
+    viewsets.GenericViewSet,
+):
     queryset = Reservation.objects.all()
     serializer_class = ReservationSerializer
-    permission_classes = (IsAuthenticated,)
+
+    def get_permissions(self):
+        if self.action in ("create", "destroy"):
+            return [IsAuthenticated(), ]
+        return [IsAdminOrIfAuthenticatedReadOnly(), ]
 
     def get_queryset(self):
         return self.queryset.filter(user=self.request.user)
