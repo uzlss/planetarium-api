@@ -4,13 +4,22 @@ from rest_framework import viewsets, mixins
 from rest_framework.permissions import IsAuthenticated
 
 from planetarium.models import (
-    ShowTheme, AstronomyShow, PlanetariumDome, ShowSession, Reservation,
+    ShowTheme,
+    AstronomyShow,
+    PlanetariumDome,
+    ShowSession,
+    Reservation,
 )
 from planetarium.permissions import IsAdminOrIfAuthenticatedReadOnly
 
 from planetarium.serializers import (
-    ShowThemeSerializer, AstronomyShowSerializer, PlanetariumDomeSerializer, ShowSessionSerializer,
-    ReservationSerializer, ShowSessionListSerializer, ShowSessionRetrieveSerializer,
+    ShowThemeSerializer,
+    AstronomyShowSerializer,
+    PlanetariumDomeSerializer,
+    ShowSessionSerializer,
+    ReservationSerializer,
+    ShowSessionListSerializer,
+    ShowSessionRetrieveSerializer,
     ReservationRetrieveSerializer,
 )
 
@@ -104,9 +113,13 @@ class ShowSessionViewSet(viewsets.ModelViewSet):
         dome_name = self.request.query_params.get("dome_name")
         date = self.request.query_params.get("date")
         if show_title:
-            queryset = queryset.filter(astronomy_show__title__icontains=show_title)
+            queryset = queryset.filter(
+                astronomy_show__title__icontains=show_title
+            )
         if dome_name:
-            queryset = queryset.filter(planetarium_dome__name__icontains=dome_name)
+            queryset = queryset.filter(
+                planetarium_dome__name__icontains=dome_name
+            )
         if date:
             queryset = queryset.filter(show_time__date=date)
 
@@ -116,12 +129,13 @@ class ShowSessionViewSet(viewsets.ModelViewSet):
                 "planetarium_dome",
             ).annotate(
                 tickets_available=(
-                        F("planetarium_dome__rows") * F("planetarium_dome__seats_in_row")
-                        - Count("ticket"))
+                    F("planetarium_dome__rows")
+                    * F("planetarium_dome__seats_in_row")
+                    - Count("ticket")
+                )
             )
 
         return queryset.distinct()
-
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -136,18 +150,20 @@ class ShowSessionViewSet(viewsets.ModelViewSet):
             OpenApiParameter(
                 "show_title",
                 type={"type": "string"},
-                description="Filter by astronomy show title (ex. ?show_title=Astronomy)",
+                description="Filter by astronomy show title"
+                            " (ex. ?show_title=Astronomy)",
             ),
             OpenApiParameter(
                 "dome_name",
                 type={"type": "string"},
-                description="Filter by planetarium dome name, ex. ?dome_name=Space",
+                description="Filter by planetarium dome name"
+                            " (ex. ?dome_name=Space)",
             ),
             OpenApiParameter(
                 "date",
                 type={"type": "datetime"},
                 description="Filter by show time date (ex. ?date=2020-10-10)",
-            )
+            ),
         ]
     )
     def list(self, request, *args, **kwargs):
@@ -166,8 +182,12 @@ class ReservationViewSet(
 
     def get_permissions(self):
         if self.action in ("create", "destroy"):
-            return [IsAuthenticated(), ]
-        return [IsAdminOrIfAuthenticatedReadOnly(), ]
+            return [
+                IsAuthenticated(),
+            ]
+        return [
+            IsAdminOrIfAuthenticatedReadOnly(),
+        ]
 
     def get_queryset(self):
         queryset = self.queryset.filter(user=self.request.user)
@@ -177,7 +197,9 @@ class ReservationViewSet(
         if date:
             queryset = queryset.filter(created_at__date=date)
         if show_session:
-            queryset = queryset.filter(tickets__show_session__id=int(show_session))
+            queryset = queryset.filter(
+                tickets__show_session__id=int(show_session)
+            )
 
         if self.action in ("list", "retrieve"):
             queryset = queryset.prefetch_related("tickets")
@@ -202,8 +224,10 @@ class ReservationViewSet(
             OpenApiParameter(
                 "date",
                 type={"type": "datetime"},
-                description="Filter by ticket reservation date (ex. ?date=2020-10-10)",
-            )
+                description="Filter by ticket"
+                            " reservation date"
+                            " (ex. ?date=2020-10-10)",
+            ),
         ]
     )
     def list(self, request, *args, **kwargs):
