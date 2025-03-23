@@ -16,14 +16,14 @@ def create_custom_path(instance, filename):
 
 
 class ShowTheme(models.Model):
-    name = models.CharField(max_length=63)
+    name = models.CharField(max_length=63, unique=True)
 
     def __str__(self):
         return self.name
 
 
 class AstronomyShow(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, unique=True)
     description = models.TextField()
     image = models.ImageField(null=True, upload_to=create_custom_path)
 
@@ -32,7 +32,7 @@ class AstronomyShow(models.Model):
 
 
 class PlanetariumDome(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
     rows = models.IntegerField()
     seats_in_row = models.IntegerField()
 

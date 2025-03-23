@@ -1,6 +1,7 @@
-from django.db import transaction
+from django.core.validators import MaxLengthValidator
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
+from rest_framework.validators import UniqueValidator
 
 from planetarium.models import (
     ShowTheme,
@@ -13,6 +14,13 @@ from planetarium.models import (
 
 
 class ShowThemeSerializer(serializers.ModelSerializer):
+    name = serializers.CharField(
+        validators=[
+            UniqueValidator(queryset=ShowTheme.objects.all()),
+            MaxLengthValidator(63),
+        ]
+    )
+
     class Meta:
         model = ShowTheme
         fields = (
@@ -22,6 +30,13 @@ class ShowThemeSerializer(serializers.ModelSerializer):
 
 
 class AstronomyShowSerializer(serializers.ModelSerializer):
+    title = serializers.CharField(
+        validators=[
+            UniqueValidator(queryset=AstronomyShow.objects.all()),
+            MaxLengthValidator(255),
+        ]
+    )
+
     class Meta:
         model = AstronomyShow
         fields = (
@@ -32,6 +47,13 @@ class AstronomyShowSerializer(serializers.ModelSerializer):
 
 
 class PlanetariumDomeSerializer(serializers.ModelSerializer):
+    name = serializers.CharField(
+        validators=[
+            UniqueValidator(queryset=PlanetariumDome.objects.all()),
+            MaxLengthValidator(255),
+        ]
+    )
+
     class Meta:
         model = PlanetariumDome
         fields = (
