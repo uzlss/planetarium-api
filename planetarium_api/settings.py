@@ -26,9 +26,7 @@ INTERNAL_IPS = [
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = (
-    "django-insecure-*y2syf6e42l=x!x20b!su$a!a(gk7ikqie260y&obqqhjp_^1)"
-)
+SECRET_KEY = (os.environ.get("SECRET_KEY", "<S0Per#S3cr3T_k3Y>"))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
