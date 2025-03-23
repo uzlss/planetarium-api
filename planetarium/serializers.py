@@ -117,7 +117,7 @@ class ShowSessionListSerializer(ShowSessionSerializer):
 
 
 class ShowSessionRetrieveSerializer(ShowSessionSerializer):
-    astronomy_show = AstronomyShowSerializer(many=False, read_only=True)
+    astronomy_show = AstronomyShowRetrieveSerializer(many=False, read_only=True)
     planetarium_dome = ShowThemeSerializer(many=False, read_only=True)
 
 
