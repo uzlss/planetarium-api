@@ -13,26 +13,22 @@ from planetarium.serializers import (
 )
 
 
-class PlanetariumBaseViewSet(viewsets.ModelViewSet):
-    permission_classes = (IsAdminOrIfAuthenticatedReadOnly, )
-
-
-class ShowThemeViewSet(PlanetariumBaseViewSet):
+class ShowThemeViewSet(viewsets.ModelViewSet):
     queryset = ShowTheme.objects.all()
     serializer_class = ShowThemeSerializer
 
 
-class AstronomyShowViewSet(PlanetariumBaseViewSet):
+class AstronomyShowViewSet(viewsets.ModelViewSet):
     queryset = AstronomyShow.objects.all()
     serializer_class = AstronomyShowSerializer
 
 
-class PlanetariumDomeViewSet(PlanetariumBaseViewSet):
+class PlanetariumDomeViewSet(viewsets.ModelViewSet):
     queryset = PlanetariumDome.objects.all()
     serializer_class = PlanetariumDomeSerializer
 
 
-class ShowSessionViewSet(PlanetariumBaseViewSet):
+class ShowSessionViewSet(viewsets.ModelViewSet):
     queryset = ShowSession.objects.select_related(
         "astronomy_show",
         "planetarium_dome",
