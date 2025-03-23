@@ -1,3 +1,4 @@
+from django.db.models import F, Count
 from rest_framework import viewsets, mixins
 from rest_framework.permissions import IsAuthenticated
 
@@ -71,6 +72,10 @@ class ShowSessionViewSet(viewsets.ModelViewSet):
             queryset = queryset.select_related(
                 "astronomy_show",
                 "planetarium_dome",
+            ).annotate(
+                tickets_available=(
+                        F("planetarium_dome__rows") * F("planetarium_dome__seats_in_row")
+                        - Count("ticket"))
             )
 
         return queryset.distinct()

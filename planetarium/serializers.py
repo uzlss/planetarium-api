@@ -67,6 +67,7 @@ class ShowSessionListSerializer(ShowSessionSerializer):
         source="planetarium_dome.capacity",
         read_only=True
     )
+    tickets_available = serializers.IntegerField(read_only=True)
 
     class Meta:
         model = ShowSession
@@ -76,6 +77,7 @@ class ShowSessionListSerializer(ShowSessionSerializer):
             "astronomy_show_title",
             "planetarium_dome_name",
             "planetarium_dome_capacity",
+            "tickets_available"
         )
 
 
