@@ -36,7 +36,6 @@ class AstronomyShowSerializer(serializers.ModelSerializer):
             MaxLengthValidator(255),
         ]
     )
-    show_themes = ShowThemeSerializer(many=True, read_only=True)
 
     class Meta:
         model = AstronomyShow
@@ -46,6 +45,18 @@ class AstronomyShowSerializer(serializers.ModelSerializer):
             "description",
             "show_themes",
         )
+
+
+class AstronomyShowListSerializer(AstronomyShowSerializer):
+    show_themes = serializers.SlugRelatedField(
+        many=True,
+        read_only=True,
+        slug_field="name",
+    )
+
+
+class AstronomyShowRetrieveSerializer(AstronomyShowSerializer):
+    show_themes = ShowThemeSerializer(many=True, read_only=True)
 
 
 class PlanetariumDomeSerializer(serializers.ModelSerializer):
