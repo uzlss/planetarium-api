@@ -6,3 +6,5 @@ media
 *.sqlite3
 Dockerfile
 docker-compose.yaml
+README.md
+LICENSE
