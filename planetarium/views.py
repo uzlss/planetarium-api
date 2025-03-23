@@ -20,7 +20,9 @@ from planetarium.serializers import (
     ReservationSerializer,
     ShowSessionListSerializer,
     ShowSessionRetrieveSerializer,
-    ReservationRetrieveSerializer, AstronomyShowListSerializer, AstronomyShowRetrieveSerializer,
+    ReservationRetrieveSerializer,
+    AstronomyShowListSerializer,
+    AstronomyShowRetrieveSerializer,
 )
 
 
@@ -158,13 +160,13 @@ class ShowSessionViewSet(viewsets.ModelViewSet):
                 "show_title",
                 type={"type": "string"},
                 description="Filter by astronomy show title"
-                            " (ex. ?show_title=Astronomy)",
+                " (ex. ?show_title=Astronomy)",
             ),
             OpenApiParameter(
                 "dome_name",
                 type={"type": "string"},
                 description="Filter by planetarium dome name"
-                            " (ex. ?dome_name=Space)",
+                " (ex. ?dome_name=Space)",
             ),
             OpenApiParameter(
                 "date",
@@ -232,8 +234,8 @@ class ReservationViewSet(
                 "date",
                 type={"type": "datetime"},
                 description="Filter by ticket"
-                            " reservation date"
-                            " (ex. ?date=2020-10-10)",
+                " reservation date"
+                " (ex. ?date=2020-10-10)",
             ),
         ]
     )
