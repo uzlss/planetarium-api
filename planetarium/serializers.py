@@ -36,6 +36,7 @@ class AstronomyShowSerializer(serializers.ModelSerializer):
             MaxLengthValidator(255),
         ]
     )
+    show_themes = ShowThemeSerializer(many=True, read_only=True)
 
     class Meta:
         model = AstronomyShow
@@ -43,6 +44,7 @@ class AstronomyShowSerializer(serializers.ModelSerializer):
             "id",
             "title",
             "description",
+            "show_themes",
         )
 
 
