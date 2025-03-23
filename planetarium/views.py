@@ -1,4 +1,5 @@
 from django.db.models import F, Count
+from drf_spectacular.utils import extend_schema, OpenApiParameter
 from rest_framework import viewsets, mixins
 from rest_framework.permissions import IsAuthenticated
 
@@ -27,6 +28,18 @@ class ShowThemeViewSet(viewsets.ModelViewSet):
 
         return queryset
 
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                "name",
+                type={"type": "string"},
+                description="Filter by the name (ex. ?name=Space)",
+            )
+        ]
+    )
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
+
 
 class AstronomyShowViewSet(viewsets.ModelViewSet):
     queryset = AstronomyShow.objects.all()
@@ -41,6 +54,18 @@ class AstronomyShowViewSet(viewsets.ModelViewSet):
 
         return queryset
 
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                "title",
+                type={"type": "string"},
+                description="Filter by the title(ex. ?title=Astronomy)",
+            )
+        ]
+    )
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
+
 
 class PlanetariumDomeViewSet(viewsets.ModelViewSet):
     queryset = PlanetariumDome.objects.all()
@@ -54,6 +79,18 @@ class PlanetariumDomeViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(name__icontains=name)
 
         return queryset
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                "name",
+                type={"type": "string"},
+                description="Filter by the name (ex. ?name=Space)",
+            )
+        ]
+    )
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
 
 
 class ShowSessionViewSet(viewsets.ModelViewSet):
@@ -94,6 +131,28 @@ class ShowSessionViewSet(viewsets.ModelViewSet):
 
         return self.serializer_class
 
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                "show_title",
+                type={"type": "string"},
+                description="Filter by astronomy show title (ex. ?show_title=Astronomy)",
+            ),
+            OpenApiParameter(
+                "dome_name",
+                type={"type": "string"},
+                description="Filter by planetarium dome name, ex. ?dome_name=Space",
+            ),
+            OpenApiParameter(
+                "date",
+                type={"type": "datetime"},
+                description="Filter by show time date (ex. ?date=2020-10-10)",
+            )
+        ]
+    )
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
+
 
 class ReservationViewSet(
     mixins.ListModelMixin,
@@ -132,3 +191,20 @@ class ReservationViewSet(
         if self.action == "retrieve":
             return ReservationRetrieveSerializer
         return self.serializer_class
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                "show_session",
+                type={"type": "number"},
+                description="Filter by show session id (ex. ?show_session=2)",
+            ),
+            OpenApiParameter(
+                "date",
+                type={"type": "datetime"},
+                description="Filter by ticket reservation date (ex. ?date=2020-10-10)",
+            )
+        ]
+    )
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
