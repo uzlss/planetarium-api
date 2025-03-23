@@ -18,6 +18,15 @@ class ShowThemeViewSet(viewsets.ModelViewSet):
     queryset = ShowTheme.objects.all()
     serializer_class = ShowThemeSerializer
 
+    def get_queryset(self):
+        queryset = self.queryset
+
+        name = self.request.query_params.get("name")
+        if name:
+            queryset = queryset.filter(name__icontains=name)
+
+        return queryset
+
 
 class AstronomyShowViewSet(viewsets.ModelViewSet):
     queryset = AstronomyShow.objects.all()
@@ -50,10 +59,6 @@ class PlanetariumDomeViewSet(viewsets.ModelViewSet):
 class ShowSessionViewSet(viewsets.ModelViewSet):
     queryset = ShowSession.objects.all()
     serializer_class = ShowSessionSerializer
-
-    @staticmethod
-    def _params_to_int(str_ids):
-        return [int(str_id) for str_id in str_ids.split(",")]
 
     def get_queryset(self):
         queryset = self.queryset
