@@ -51,7 +51,7 @@ class ReservationViewSet(
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet,
 ):
-    queryset = Reservation.objects.all()
+    queryset = Reservation.objects.prefetch_related("tickets")
     serializer_class = ReservationSerializer
 
     def get_permissions(self):
@@ -60,7 +60,10 @@ class ReservationViewSet(
         return [IsAdminOrIfAuthenticatedReadOnly(), ]
 
     def get_queryset(self):
-        return self.queryset.filter(user=self.request.user)
+        queryset = self.queryset.filter(user=self.request.user)
+        if self.action == "retrieve":
+            queryset = queryset.prefetch_related("tickets")
+        return queryset
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
