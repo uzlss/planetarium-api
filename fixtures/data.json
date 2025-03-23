@@ -3,11 +3,10 @@
     "model": "user.user",
     "pk": 1,
     "fields": {
-      "username": "user1",
-      "password": "pbkdf2_sha256$260000$dummyhash1",
       "email": "user1@example.com",
-      "is_staff": false,
+      "password": "pbkdf2_sha256$260000$dummyhash1",
       "is_active": true,
+      "is_staff": false,
       "is_superuser": false,
       "date_joined": "2025-03-21T00:00:00Z"
     }
@@ -16,11 +15,10 @@
     "model": "user.user",
     "pk": 2,
     "fields": {
-      "username": "user2",
-      "password": "pbkdf2_sha256$260000$dummyhash2",
       "email": "user2@example.com",
-      "is_staff": false,
+      "password": "pbkdf2_sha256$260000$dummyhash2",
       "is_active": true,
+      "is_staff": false,
       "is_superuser": false,
       "date_joined": "2025-03-21T00:00:00Z"
     }
@@ -29,11 +27,10 @@
     "model": "user.user",
     "pk": 3,
     "fields": {
-      "username": "user3",
-      "password": "pbkdf2_sha256$260000$dummyhash3",
       "email": "user3@example.com",
-      "is_staff": false,
+      "password": "pbkdf2_sha256$260000$dummyhash3",
       "is_active": true,
+      "is_staff": false,
       "is_superuser": false,
       "date_joined": "2025-03-21T00:00:00Z"
     }
@@ -42,11 +39,10 @@
     "model": "user.user",
     "pk": 4,
     "fields": {
-      "username": "user4",
-      "password": "pbkdf2_sha256$260000$dummyhash4",
       "email": "user4@example.com",
-      "is_staff": false,
+      "password": "pbkdf2_sha256$260000$dummyhash4",
       "is_active": true,
+      "is_staff": false,
       "is_superuser": false,
       "date_joined": "2025-03-21T00:00:00Z"
     }
@@ -55,11 +51,10 @@
     "model": "user.user",
     "pk": 5,
     "fields": {
-      "username": "user5",
-      "password": "pbkdf2_sha256$260000$dummyhash5",
       "email": "user5@example.com",
-      "is_staff": false,
+      "password": "pbkdf2_sha256$260000$dummyhash5",
       "is_active": true,
+      "is_staff": false,
       "is_superuser": false,
       "date_joined": "2025-03-21T00:00:00Z"
     }
@@ -68,11 +63,10 @@
     "model": "user.user",
     "pk": 6,
     "fields": {
-      "username": "user6",
-      "password": "pbkdf2_sha256$260000$dummyhash6",
       "email": "user6@example.com",
-      "is_staff": false,
+      "password": "pbkdf2_sha256$260000$dummyhash6",
       "is_active": true,
+      "is_staff": false,
       "is_superuser": false,
       "date_joined": "2025-03-21T00:00:00Z"
     }
@@ -81,11 +75,10 @@
     "model": "user.user",
     "pk": 7,
     "fields": {
-      "username": "user7",
-      "password": "pbkdf2_sha256$260000$dummyhash7",
       "email": "user7@example.com",
-      "is_staff": false,
+      "password": "pbkdf2_sha256$260000$dummyhash7",
       "is_active": true,
+      "is_staff": false,
       "is_superuser": false,
       "date_joined": "2025-03-21T00:00:00Z"
     }
@@ -94,11 +87,10 @@
     "model": "user.user",
     "pk": 8,
     "fields": {
-      "username": "user8",
-      "password": "pbkdf2_sha256$260000$dummyhash8",
       "email": "user8@example.com",
-      "is_staff": false,
+      "password": "pbkdf2_sha256$260000$dummyhash8",
       "is_active": true,
+      "is_staff": false,
       "is_superuser": false,
       "date_joined": "2025-03-21T00:00:00Z"
     }
@@ -107,11 +99,10 @@
     "model": "user.user",
     "pk": 9,
     "fields": {
-      "username": "user9",
-      "password": "pbkdf2_sha256$260000$dummyhash9",
       "email": "user9@example.com",
-      "is_staff": false,
+      "password": "pbkdf2_sha256$260000$dummyhash9",
       "is_active": true,
+      "is_staff": false,
       "is_superuser": false,
       "date_joined": "2025-03-21T00:00:00Z"
     }
@@ -120,11 +111,10 @@
     "model": "user.user",
     "pk": 10,
     "fields": {
-      "username": "user10",
-      "password": "pbkdf2_sha256$260000$dummyhash10",
       "email": "user10@example.com",
-      "is_staff": false,
+      "password": "pbkdf2_sha256$260000$dummyhash10",
       "is_active": true,
+      "is_staff": false,
       "is_superuser": false,
       "date_joined": "2025-03-21T00:00:00Z"
     }
@@ -133,52 +123,72 @@
   {
     "model": "planetarium.showtheme",
     "pk": 1,
-    "fields": { "name": "Theme 1: Cosmos" }
+    "fields": {
+      "name": "Theme 1: Cosmos"
+    }
   },
   {
     "model": "planetarium.showtheme",
     "pk": 2,
-    "fields": { "name": "Theme 2: Nebulae" }
+    "fields": {
+      "name": "Theme 2: Nebulae"
+    }
   },
   {
     "model": "planetarium.showtheme",
     "pk": 3,
-    "fields": { "name": "Theme 3: Galaxies" }
+    "fields": {
+      "name": "Theme 3: Galaxies"
+    }
   },
   {
     "model": "planetarium.showtheme",
     "pk": 4,
-    "fields": { "name": "Theme 4: Black Holes" }
+    "fields": {
+      "name": "Theme 4: Black Holes"
+    }
   },
   {
     "model": "planetarium.showtheme",
     "pk": 5,
-    "fields": { "name": "Theme 5: Stars" }
+    "fields": {
+      "name": "Theme 5: Stars"
+    }
   },
   {
     "model": "planetarium.showtheme",
     "pk": 6,
-    "fields": { "name": "Theme 6: Planets" }
+    "fields": {
+      "name": "Theme 6: Planets"
+    }
   },
   {
     "model": "planetarium.showtheme",
     "pk": 7,
-    "fields": { "name": "Theme 7: Comets" }
+    "fields": {
+      "name": "Theme 7: Comets"
+    }
   },
   {
     "model": "planetarium.showtheme",
     "pk": 8,
-    "fields": { "name": "Theme 8: Asteroids" }
+    "fields": {
+      "name": "Theme 8: Asteroids"
+    }
   },
   {
     "model": "planetarium.showtheme",
     "pk": 9,
-    "fields": { "name": "Theme 9: Meteor Showers" }
+    "fields": {
+      "name": "Theme 9: Meteor Showers"
+    }
   },
   {
     "model": "planetarium.showtheme",
     "pk": 10,
-    "fields": { "name": "Theme 10: Exoplanets" }
+    "fields": {
+      "name": "Theme 10: Exoplanets"
+    }
   },
 
   {
@@ -186,7 +196,9 @@
     "pk": 1,
     "fields": {
       "title": "Astronomy Show 1",
-      "description": "An engaging show about the mysteries of the cosmos."
+      "description": "An engaging show about the mysteries of the cosmos.",
+      "image": null,
+      "show_themes": [1, 2]
     }
   },
   {
@@ -194,7 +206,9 @@
     "pk": 2,
     "fields": {
       "title": "Astronomy Show 2",
-      "description": "Explore the wonders of nebulae and stellar formations."
+      "description": "Explore the wonders of nebulae and stellar formations.",
+      "image": null,
+      "show_themes": [2, 3]
     }
   },
   {
@@ -202,7 +216,9 @@
     "pk": 3,
     "fields": {
       "title": "Astronomy Show 3",
-      "description": "Learn about galaxies and the evolution of the universe."
+      "description": "Learn about galaxies and the evolution of the universe.",
+      "image": null,
+      "show_themes": [3, 4]
     }
   },
   {
@@ -210,7 +226,9 @@
     "pk": 4,
     "fields": {
       "title": "Astronomy Show 4",
-      "description": "A deep dive into black holes and cosmic phenomena."
+      "description": "A deep dive into black holes and cosmic phenomena.",
+      "image": null,
+      "show_themes": [4, 5]
     }
   },
   {
@@ -218,7 +236,9 @@
     "pk": 5,
     "fields": {
       "title": "Astronomy Show 5",
-      "description": "The life cycle of stars explained in detail."
+      "description": "The life cycle of stars explained in detail.",
+      "image": null,
+      "show_themes": [5, 6]
     }
   },
   {
@@ -226,7 +246,9 @@
     "pk": 6,
     "fields": {
       "title": "Astronomy Show 6",
-      "description": "Discover the secrets of our solar system and planets."
+      "description": "Discover the secrets of our solar system and planets.",
+      "image": null,
+      "show_themes": [6, 7]
     }
   },
   {
@@ -234,7 +256,9 @@
     "pk": 7,
     "fields": {
       "title": "Astronomy Show 7",
-      "description": "A journey through comets and their spectacular tails."
+      "description": "A journey through comets and their spectacular tails.",
+      "image": null,
+      "show_themes": [7, 8]
     }
   },
   {
@@ -242,7 +266,9 @@
     "pk": 8,
     "fields": {
       "title": "Astronomy Show 8",
-      "description": "Understand asteroids and their impact on Earth."
+      "description": "Understand asteroids and their impact on Earth.",
+      "image": null,
+      "show_themes": [8, 9]
     }
   },
   {
@@ -250,7 +276,9 @@
     "pk": 9,
     "fields": {
       "title": "Astronomy Show 9",
-      "description": "Experience the magic of meteor showers."
+      "description": "Experience the magic of meteor showers.",
+      "image": null,
+      "show_themes": [9, 10]
     }
   },
   {
@@ -258,7 +286,9 @@
     "pk": 10,
     "fields": {
       "title": "Astronomy Show 10",
-      "description": "Insights into the discovery of distant exoplanets."
+      "description": "Insights into the discovery of distant exoplanets.",
+      "image": null,
+      "show_themes": [10, 1]
     }
   },
 
